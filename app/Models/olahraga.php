@@ -19,7 +19,7 @@ class olahraga extends Model
         'nama',             // Nama olahraga
         'harga_jual',       // Harga jual olahraga
         'harga_beli',       // Harga beli olahraga
-        'stok',             // Jumlah stok olahraga
+        'tiket',             // Jumlah tiket olahraga
         'min_stok',         // Jumlah minimal stok olahraga
         'deskripsi',        // Deskripsi olahraga
         'kategori_olahraga_id',// ID kategori olahraga

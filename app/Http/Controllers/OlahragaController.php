@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\kategori_olahraga;
 use App\Models\olahraga;
 use Illuminate\Http\Request;
 
@@ -19,7 +20,7 @@ class OlahragaController extends Controller
             ->select('olahraga.*', 'kategori_olahraga.nama as nama_kategori')
             ->get();
 
-            $kategori_olahraga = KategoriOlahraga::all();
+            $kategori_olahraga = kategori_olahraga::all();
         // kirim data ke view
         return view('admin.olahraga.olahraga', compact('kategori_olahraga', 'olahraga'));
     }
@@ -29,7 +30,7 @@ class OlahragaController extends Controller
      */
     public function create()
     {
-        $kategori_olahraga = KategoriOlahraga::all();
+        $kategori_olahraga = kategori_olahraga::all();
         $olahraga = olahraga::all();
         return view('admin.olahraga.create', compact('kategori_olahraga', 'olahraga'));
     }
@@ -46,7 +47,7 @@ class OlahragaController extends Controller
          $olahraga->nama = $request->nama;
          $olahraga->harga_jual = $request->harga_jual;
          $olahraga->harga_beli = $request->harga_beli;
-         $olahraga->stok = $request->stok;
+         $olahraga->tiket = $request->tiket;
          $olahraga->min_stok = $request->min_stok;
          $olahraga->deskripsi = $request->deskripsi;
          $olahraga->kategori_olahraga_id = $request->kategori_olahraga_id;
@@ -66,7 +67,7 @@ class OlahragaController extends Controller
         $olahraga->nama = $request->nama;
         $olahraga->harga_jual = $request->harga_jual;
         $olahraga->harga_beli = $request->harga_beli;
-        $olahraga->stok = $request->stok;
+        $olahraga->tiket = $request->tiket;
         $olahraga->min_stok = $request->min_stok;
         $olahraga->deskripsi = $request->deskripsi;
         $olahraga->kategori_olahraga_id = $request->kategori_olahraga_id;
